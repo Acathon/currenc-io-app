@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="lab.standards.currencio.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <fragment
+        android:id="@+id/frag_currency"
+        android:name="lab.standards.currencio.CurrencyFragment"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout="@layout/fragment_currency" />
 
-</android.support.constraint.ConstraintLayout>
+    <fragment
+        android:id="@+id/frag_input"
+        android:name="lab.standards.currencio.InputFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frag_currency"
+        tools:layout="@layout/fragment_input" />
+
+    <fragment
+        android:id="@+id/frag_convert"
+        android:name="lab.standards.currencio.ConvertFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frag_input"
+        tools:layout="@layout/fragment_convert" />
+
+    <fragment
+        android:id="@+id/frag_pad"
+        android:name="lab.standards.currencio.PadFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frag_convert"
+        tools:layout="@layout/fragment_pad" />
+
+</RelativeLayout>
