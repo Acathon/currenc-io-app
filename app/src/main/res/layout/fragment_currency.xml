@@ -7,10 +7,10 @@
     tools:context=".CurrencyFragment">
 
     <ImageButton
+        style="@style/ImageButtonView"
         android:id="@+id/img_flag"
         android:layout_width="72dp"
         android:layout_height="92dp"
-        android:background=""
         android:src="@mipmap/ic_flag_tnd" />
 
     <HorizontalScrollView

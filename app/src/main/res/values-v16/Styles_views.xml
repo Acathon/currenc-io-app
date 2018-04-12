@@ -22,4 +22,14 @@
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 
+    <style name="ImageButtonView" parent="Base.Widget.AppCompat.ImageButton">
+        <item name="android:alpha">.54</item>
+        <item name="android:background"></item>
+    </style>
+
+    <style name="HScrollView">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
 </resources>
