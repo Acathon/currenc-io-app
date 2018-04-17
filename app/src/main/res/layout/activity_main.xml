@@ -62,7 +62,7 @@
     <LinearLayout
         android:id="@+id/layoutButton"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="92dp"
         android:layout_above="@+id/layoutPad"
         android:elevation="4dp"
         android:orientation="horizontal">

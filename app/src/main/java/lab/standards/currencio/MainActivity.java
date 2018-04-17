@@ -1,5 +1,6 @@
 package lab.standards.currencio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -17,6 +18,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_CONVERT = "lab.standards.currencio.EXTRA_CONVERT";
 
     @BindView(R.id.btn_One)
     Button btn_1;
@@ -48,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
     TextView input;
     @BindView(R.id.Currency)
     Spinner spinner;
+    @BindView(R.id.btn_Convert)
+    Button convert;
 
 
-    private String[] currency = {"european union", "Great Britain Pound", "United States Dollar"};
+    private String[] currency = {"European Union Euro", "Great Britain Pound", "United States Dollar"};
     private int[] flags = {R.drawable.ic_eu, R.drawable.ic_uk, R.drawable.ic_us};
     private Currency adapter;
 
@@ -59,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        btn_cls.setVisibility(View.INVISIBLE);
 
         adapter = new Currency(this, currency, flags);
         spinner.setAdapter(adapter);
@@ -83,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (input.getText().toString().isEmpty()) {
-                    btn_cls.setVisibility(View.GONE);
+                    btn_cls.setVisibility(View.INVISIBLE);
                 } else {
                     btn_cls.setVisibility(View.VISIBLE);
                 }
@@ -98,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.btn_One, R.id.btn_Two, R.id.btn_Three, R.id.btn_Four, R.id.btn_Five, R.id.btn_Six, R.id.btn_Seven, R.id.btn_Eight,
-            R.id.btn_Nine, R.id.btn_Zero, R.id.btn_Decimal, R.id.btn_ClearLastDigit, R.id.btn_Clear})
+            R.id.btn_Nine, R.id.btn_Zero, R.id.btn_Decimal, R.id.btn_ClearLastDigit, R.id.btn_Clear, R.id.btn_Convert})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_One:
@@ -132,13 +139,24 @@ public class MainActivity extends AppCompatActivity {
                 input.setText(input.getText() + "0");
                 break;
             case R.id.btn_Decimal:
-                input.setText(input.getText() + ".");
+                if (input.getText().toString().isEmpty()) {
+                    input.setText(input.getText() + "0.");
+                } else {
+                    input.setText(input.getText() + ".");
+                }
                 break;
             case R.id.btn_Clear:
                 input.setText("");
                 break;
             case R.id.btn_ClearLastDigit:
-                input.setText(input.getText().toString().substring(0, input.getText().toString().length() - 1));
+                if (!input.getText().toString().isEmpty())
+                    input.setText(input.getText().toString().substring(0, input.getText().toString().length() - 1));
+                break;
+            case R.id.btn_Convert:
+                Intent intent = new Intent(this, SecondActivity.class);
+                String toConvert = input.getText().toString();
+                intent.putExtra(EXTRA_CONVERT, toConvert);
+                startActivity(intent);
                 break;
         }
     }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/country_flag"
+                android:layout_width="64dp"
+                android:layout_height="47dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_eu" />
+
+            <TextView
+                android:id="@+id/country_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/country_flag"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                tools:text="EUR" />
+
+            <TextView
+                android:id="@+id/country_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/country_currency"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/country_flag"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                tools:text="European Union" />
+
+            <TextView
+                android:id="@+id/currency_pruce"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_alignParentRight="true"
+                android:layout_toEndOf="@+id/country_name"
+                android:layout_toRightOf="@+id/country_currency"
+                android:gravity="center_vertical|right"
+                android:paddingRight="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                tools:text="100" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
