@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AboutActivity"
+    tools:showIn="@layout/activity_about">
+
+    <ImageView
+        android:id="@+id/logo_ic"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_splash_original" />
+
+    <TextView
+        android:id="@+id/text_logo"
+        style="@style/textthin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_ic"
+        android:layout_centerHorizontal="true"
+        android:text="Currencio Ⓒ 2018"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_copy"
+        style="@style/textthin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_logo"
+        android:layout_centerHorizontal="true"
+        android:text="Android Project IRM 2 ISIL - Polytech Intl"
+        android:textSize="14sp" />
+
+    <TextView
+        style="@style/textthin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_copy"
+        android:layout_centerHorizontal="true"
+        android:text="Contact: m.essouri16174@pi.tn"
+        android:textSize="12sp" />
+
+</RelativeLayout>

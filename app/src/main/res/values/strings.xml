@@ -2,4 +2,20 @@
     <string name="app_name">Currencio</string>
     <string name="btn_convert">Convert</string>
     <string name="title_activity_second">Currencio</string>
+    <string name="title_activity_about">About Currencio</string>
+    <string name="title_activity_open_third">Open third party</string>
+    <string name="plans">
+        <![CDATA[
+        <p><b>Free Plans</b></p>
+        <p><i>ExchangeRate-API</i> offers free access to its services by allowing users to choose a Free Plan.</p>
+        <p>The usage permissions and request quotas for Free Plans are subject to change at the discretion of <i>ExchangeRate-API</i>. The continued servicing of Free Plans is subject to the discretion of <i>ExchangeRate-API</i></p>.
+        ]]>
+    </string>
+    <string name="disclaimer">
+        <![CDATA[
+        <p><b>DISCLAIMER</b></p>
+        <p>Currency and exchange rate data provided by <i>ExchangeRate-API</i> is only suitable for informational or illustrative purposes. Use of the exchange rates we provide for actual transactions or as financial data is explicitly not recommended.
+        </p><p>Although a best effort is made to ensure currency and exchange rate data returned by this API is up to date, we cannot guarantee the accuracy of any exchange rates we provide. We make no warranties or guarantees - express or implied - regarding exchange rate information returned by our API, its completeness or correctness, its accuracy or its fitness for any particular purpose.</p>
+        ]]>
+    </string>
 </resources>

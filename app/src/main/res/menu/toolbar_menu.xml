@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_open"
-        android:title="License"
+        android:title="Open third party"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_about"

@@ -101,8 +101,12 @@ public class SecondActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_open:
+                Intent open = new Intent(getApplicationContext(), OpenThirdActivity.class);
+                startActivity(open);
                 return true;
             case R.id.action_about:
+                Intent about = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(about);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
