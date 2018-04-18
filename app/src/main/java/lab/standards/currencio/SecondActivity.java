@@ -21,6 +21,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,15 +136,15 @@ public class SecondActivity extends AppCompatActivity {
                 System.out.println(strGBP);
                 System.out.println(strUSD);
                 USDTND = Double.parseDouble(strTND) * Double.parseDouble(currency);
-                TND = String.valueOf(USDTND);
-                EURO = String.valueOf(Double.parseDouble(strEUR) * Double.parseDouble(currency));
-                GBP = String.valueOf(Double.parseDouble(strGBP) * Double.parseDouble(currency));
-                USD = String.valueOf(Double.parseDouble(strUSD) * Double.parseDouble(currency));
-                SAR = String.valueOf(Double.parseDouble(strSAR) * Double.parseDouble(currency));
-                QAR = String.valueOf(Double.parseDouble(strQAR) * Double.parseDouble(currency));
-                CAD = String.valueOf(Double.parseDouble(strCAD) * Double.parseDouble(currency));
-                JPY = String.valueOf(Double.parseDouble(strJPY) * Double.parseDouble(currency));
-                CNY = String.valueOf(Double.parseDouble(strCNY) * Double.parseDouble(currency));
+                TND = new DecimalFormat("##.#####").format(USDTND);
+                EURO = new DecimalFormat("##.#####").format(Double.parseDouble(strEUR) * Double.parseDouble(currency));
+                GBP = new DecimalFormat("##.#####").format(Double.parseDouble(strGBP) * Double.parseDouble(currency));
+                USD = new DecimalFormat("##.#####").format(Double.parseDouble(strUSD) * Double.parseDouble(currency));
+                SAR = new DecimalFormat("##.#####").format(Double.parseDouble(strSAR) * Double.parseDouble(currency));
+                QAR = new DecimalFormat("##.#####").format(Double.parseDouble(strQAR) * Double.parseDouble(currency));
+                CAD = new DecimalFormat("##.#####").format(Double.parseDouble(strCAD) * Double.parseDouble(currency));
+                JPY = new DecimalFormat("##.#####").format(Double.parseDouble(strJPY) * Double.parseDouble(currency));
+                CNY = new DecimalFormat("##.#####").format(Double.parseDouble(strCNY) * Double.parseDouble(currency));
                 System.out.println(TND);
                 runOnUiThread(new Runnable() {
                     @Override

@@ -76,9 +76,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
+                                      <entry key="backgroundColor" value="78909c" />
                                       <entry key="cropped" value="true" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="C:\Users\musta\Desktop\splash.png" />
+                                      <entry key="imageAsset" value="C:\Users\musta\Desktop\ic_splash.png" />
                                       <entry key="outputName" value="ic_splash_screen" />
                                     </map>
                                   </option>
