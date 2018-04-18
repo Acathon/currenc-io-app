@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -24,6 +27,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -45,6 +49,7 @@ public class SecondActivity extends AppCompatActivity {
     public String QAR;
     public String JPY;
     public String CNY;
+    private InterstitialAd mInterstitialAd;
 
 
     @Override
@@ -61,6 +66,17 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-6759138947156191/6741017148");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
             }
         });
 
@@ -160,8 +176,8 @@ public class SecondActivity extends AppCompatActivity {
                         currenciesList.add(new ListCurrencies("United States", "USD", USD, R.drawable.ic_us));
                         currenciesList.add(new ListCurrencies("Saudi Arabia", "SAR", SAR, R.drawable.ic_sa));
                         currenciesList.add(new ListCurrencies("Qatar", "QAR", QAR, R.drawable.ic_qa));
-                        currenciesList.add(new ListCurrencies("China", "QAR", CNY, R.drawable.ic_ch));
-                        currenciesList.add(new ListCurrencies("Japan", "QAR", JPY, R.drawable.ic_ja));
+                        currenciesList.add(new ListCurrencies("China", "CNY", CNY, R.drawable.ic_ch));
+                        currenciesList.add(new ListCurrencies("Japan", "JPY", JPY, R.drawable.ic_ja));
 
                         Currencies adapter = new Currencies(getApplicationContext(), currenciesList);
                         recyclerView.setAdapter(adapter);
