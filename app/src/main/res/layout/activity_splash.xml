@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="#78909C"
     tools:context=".SplashActivity">
 
     <ImageView
@@ -15,6 +15,7 @@
         android:src="@mipmap/ic_splash_screen" />
 
     <TextView
+        style="@style/textthin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ic_splash"

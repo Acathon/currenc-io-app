@@ -17,7 +17,7 @@
 
     <style name="layoutButton" parent="Widget.AppCompat.Button">
         <item name="android:textSize">34sp</item>
-        <item name="android:background">#304FFE</item>
+        <item name="android:background">#78909C</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 

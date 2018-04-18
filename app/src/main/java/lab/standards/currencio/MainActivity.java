@@ -20,6 +20,7 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_CONVERT = "lab.standards.currencio.EXTRA_CONVERT";
+    public static final String EXTRA_BASE = "lab.standards.currencio.EXTRA_BASE";
 
     @BindView(R.id.btn_One)
     Button btn_1;
@@ -56,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String[] currency = {"European Union Euro", "Great Britain Pound", "United States Dollar"};
+    private String[] coinbase = {"EUR", "GBP", "USD"};
     private int[] flags = {R.drawable.ic_eu, R.drawable.ic_uk, R.drawable.ic_us};
     private Currency adapter;
+    private String coin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                coin = coinbase[i];
                 Toast.makeText(getApplicationContext(), currency[i], Toast.LENGTH_LONG).show();
             }
 
@@ -156,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, SecondActivity.class);
                 String toConvert = input.getText().toString();
                 intent.putExtra(EXTRA_CONVERT, toConvert);
+                intent.putExtra(EXTRA_BASE, coin);
                 startActivity(intent);
                 break;
         }

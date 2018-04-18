@@ -32,4 +32,8 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+
+    <style name="textthin">
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
 </resources>
