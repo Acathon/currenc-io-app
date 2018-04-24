@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/text_copy"
         android:layout_centerHorizontal="true"
-        android:text="Contact: m.essouri16174@pi.tn"
+        android:maxLines="2"
+        android:text="Farid LIBIRI f.ibiri17084@pi.tn\nMustapha ESSOURI m.essouri16174@pi.tn"
         android:textSize="12sp" />
 
 </RelativeLayout>

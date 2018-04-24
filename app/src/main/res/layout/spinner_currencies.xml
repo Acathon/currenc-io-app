@@ -10,18 +10,18 @@
     <TextView
 
         android:id="@+id/country_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif-thin"
         android:gravity="center_vertical"
+        android:textColor="@android:color/black"
         android:textSize="26sp"
-        tools:text="Tunisian Dinar"
-        android:textColor="@android:color/black"/>
+        tools:text="Tunisian Dinar" />
 
     <ImageView
         android:id="@+id/flag"
-        android:layout_width="64dp"
+        android:layout_width="98dp"
         android:layout_height="47dp"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"

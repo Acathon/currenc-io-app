@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
     Button convert;
 
 
-    private String[] currency = {"European Union Euro", "Great Britain Pound", "United States Dollar"};
-    private String[] coinbase = {"EUR", "GBP", "USD"};
-    private int[] flags = {R.drawable.ic_eu, R.drawable.ic_uk, R.drawable.ic_us};
+    private String[] currency = {"Tunisian Dinar", "European Union Euro", "Great Britain Pound", "United States Dollar"};
+    private String[] coinbase = {"TND", "EUR", "GBP", "USD"};
+    private int[] flags = {R.drawable.ic_tn, R.drawable.ic_eu, R.drawable.ic_uk, R.drawable.ic_us};
     private Currency adapter;
     private String coin;
 
@@ -157,11 +157,14 @@ public class MainActivity extends AppCompatActivity {
                     input.setText(input.getText().toString().substring(0, input.getText().toString().length() - 1));
                 break;
             case R.id.btn_Convert:
-                Intent intent = new Intent(this, SecondActivity.class);
-                String toConvert = input.getText().toString();
-                intent.putExtra(EXTRA_CONVERT, toConvert);
-                intent.putExtra(EXTRA_BASE, coin);
-                startActivity(intent);
+                if (input.getText().toString().isEmpty()) {
+                } else {
+                    Intent intent = new Intent(this, SecondActivity.class);
+                    String toConvert = input.getText().toString();
+                    intent.putExtra(EXTRA_CONVERT, toConvert);
+                    intent.putExtra(EXTRA_BASE, coin);
+                    startActivity(intent);
+                }
                 break;
         }
     }
